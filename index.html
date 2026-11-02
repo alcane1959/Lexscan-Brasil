@@ -1,288 +1,121 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="icon.ico" type="image/x-icon"><link rel="shortcut icon" href="icon.ico" type="image/x-icon"><title>LexScan Brasil</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mammoth@1.12.1/mammoth.browser.min.js"></script>
-<style>:root{--bg:#f4f7fb;--card:#fff;--ink:#182236;--muted:#66758d;--line:#dae3ef;--brand:#2457d6;--brand2:#6d43d9;--soft:#eef3ff;--risk:#c63852;--warn:#b66c0d;--ok:#16845d}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,Segoe UI,sans-serif}.wrap{max-width:1150px;margin:auto;padding:24px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.brand{font-size:21px;font-weight:850}.badge{background:#eaf0ff;color:var(--brand);padding:7px 11px;border-radius:99px;font-size:12px;font-weight:750}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 45px #27355212}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;background:transparent;border:0;box-shadow:none;padding:0;margin-bottom:22px}.intro{padding:32px;background:linear-gradient(135deg,var(--card),var(--soft))}.notice{padding:20px}.notice strong{display:block;margin-bottom:6px}.notice p{margin:0;color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.12em;color:var(--brand);font-size:12px;font-weight:800}h1{font-size:clamp(30px,5vw,50px);line-height:1.06;margin:5px 0 12px;letter-spacing:-.04em}.hero p{color:var(--muted);font-size:17px;max-width:720px}.grid{display:grid;grid-template-columns:390px 1fr;gap:20px}.card{padding:21px}.field{margin-bottom:15px}label{display:block;font-weight:750;margin-bottom:7px}select,textarea,input{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit}textarea{min-height:280px;resize:vertical}.drop{border:2px dashed var(--line);border-radius:15px;padding:16px;text-align:center;margin-bottom:15px}.hint,.status{font-size:13px;color:var(--muted)}.status{margin-top:8px}.status.busy{color:var(--brand);font-weight:700}.status.error{color:var(--risk);font-weight:700}button{border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer}.primary{width:100%;background:linear-gradient(135deg,var(--brand),var(--brand2));color:white}.secondary{background:#eaf0ff;color:var(--brand)}.head{display:flex;justify-content:space-between;align-items:center}.head h2{margin:0}.empty{min-height:400px;display:grid;place-items:center;text-align:center;color:var(--muted)}.scores{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.score{border:1px solid var(--line);border-radius:14px;padding:13px}.score small{color:var(--muted)}.score b{display:block;font-size:24px}.finding{border:1px solid var(--line);border-left:5px solid var(--warn);border-radius:12px;padding:13px;margin:9px 0}.finding.risk{border-left-color:var(--risk)}.finding.ok{border-left-color:var(--ok)}.finding b{display:block}.finding span{color:var(--muted)}.note{padding:13px;background:#edf2ff;border-radius:12px}.hidden{display:none!important}.footer{color:var(--muted);text-align:center;padding:22px}@media(max-width:820px){.hero,.grid{grid-template-columns:1fr}.scores{grid-template-columns:1fr}.wrap{padding:14px}}</style>
-<style id="professional-visual-update">
-:root{--bg:#f6f8fc;--card:#ffffff;--ink:#122033;--muted:#627188;--line:#dce4ef;--brand:#183b68;--brand2:#2d6cdf;--soft:#edf4ff;--risk:#c7394f;--warn:#a86206;--ok:#087a58}
-body{background:radial-gradient(circle at 10% 0%,#eaf1ff 0,transparent 28%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.005em}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LexScan Imóveis</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mammoth@1.12.1/mammoth.browser.min.js"></script>
+<style>
+:root{--bg:#0e1622;--card:#151f2d;--ink:#edf3fb;--muted:#a6b3c6;--line:#2b394d;--brand:#8db4ff;--brand2:#4d83e4;--risk:#ff7185;--warn:#e7ad50;--ok:#45c79b}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0,#1c2b42 0,transparent 28%),var(--bg);color:var(--ink);font:15px/1.55 system-ui,"Segoe UI",sans-serif}.wrap{max-width:1220px;margin:auto;padding:28px 24px 40px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.brand{font-size:22px;font-weight:850;color:var(--brand)}.badge{border:1px solid #30435f;background:#152235;padding:8px 12px;border-radius:99px;color:var(--brand);font-size:12px;font-weight:750}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 55px #1f375b14}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:20px;background:transparent;border:0;box-shadow:none;margin-bottom:20px}.intro{padding:38px 40px;background:linear-gradient(135deg,#182334,#142033)}.notice{padding:28px;border-left:4px solid #d1a13c}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--brand2);font-size:11px;font-weight:800}h1{font-size:clamp(34px,4.6vw,54px);line-height:1.08;margin:6px 0 12px;letter-spacing:-.045em}.hero p,.hint,.status{color:var(--muted)}.grid{display:grid;grid-template-columns:410px minmax(0,1fr);gap:20px;align-items:start}.card{padding:25px}.field{margin-bottom:15px}label{display:block;font-weight:750;margin-bottom:7px}select,textarea,input{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#111b29;color:var(--ink);font:inherit}textarea{min-height:300px;resize:vertical}.drop{border:2px dashed #425772;border-radius:15px;padding:20px;text-align:center;margin-bottom:15px;background:#111b29}.status{font-size:13px;margin-top:8px}.busy{color:var(--brand2);font-weight:700}.error{color:var(--risk);font-weight:700}button{border:0;border-radius:12px;padding:13px 16px;font-weight:800;cursor:pointer}.primary{width:100%;color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand2))}.secondary{background:#22334c;color:var(--ink)}.head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:14px}.head h2{margin:0}.empty{min-height:430px;display:grid;place-items:center;text-align:center;color:var(--muted)}.scores{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.score{border:1px solid var(--line);border-radius:14px;padding:14px}.score small{color:var(--muted)}.score b{display:block;font-size:24px;color:var(--brand)}.finding{border:1px solid var(--line);border-left:5px solid var(--warn);border-radius:12px;padding:15px;margin:10px 0;background:#151f2d}.finding.risk{border-left-color:var(--risk)}.finding.ok{border-left-color:var(--ok)}.finding h3{font-size:16px;margin:0 0 7px}.meta{color:var(--muted);font-size:13px}.block{margin-top:11px;padding:12px;border-radius:10px;background:#111b29;white-space:pre-wrap}.block.corrected{background:#143128;border:1px solid #285c4c}.block b{display:block;margin-bottom:5px}.note{padding:13px;background:#192b45;border:1px solid #294568;border-radius:12px}.hidden{display:none!important}.refs{margin-top:20px}.footer{text-align:center;color:var(--muted);padding:22px}@media(max-width:820px){.hero,.grid{grid-template-columns:1fr}.scores{grid-template-columns:1fr}.wrap{padding:14px}.intro{padding:28px 24px}}
+</style>
+
+<style id="original-layout-restoration">
+/* Restauração visual baseada no layout original, sem alterar o motor. */
+:root{--bg:#0e1622;--card:#151f2d;--ink:#edf3fb;--muted:#a6b3c6;--line:#2b394d;--brand:#8db4ff;--brand2:#4d83e4;--risk:#ff7185;--warn:#e7ad50;--ok:#45c79b}
+body{background:radial-gradient(circle at 10% 0%,#1c2b42 0,transparent 28%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.005em}
 .wrap{max-width:1220px;padding:28px 24px 40px}
 .top{padding:0 4px;margin-bottom:26px}
-.brand{display:flex;align-items:center;gap:11px;color:var(--brand);font-size:22px;letter-spacing:-.025em}
-.brand::before{content:"§";display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:linear-gradient(145deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 9px 20px rgba(24,59,104,.22)}
-.badge{border:1px solid #cfdbef;background:rgba(255,255,255,.82);box-shadow:0 6px 18px rgba(25,46,82,.06);padding:8px 12px}
-.card{border-color:#dfe6f0;box-shadow:0 18px 55px rgba(31,55,91,.08)}
+.brand{display:flex;align-items:center;gap:11px;color:#dce9ff;font-size:22px;letter-spacing:-.025em}
+.brand::before{content:"§";display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:linear-gradient(145deg,#183b68,#4d83e4);color:#fff;box-shadow:0 9px 20px rgba(0,0,0,.35)}
+.badge{border:1px solid #30435f;background:rgba(21,34,53,.88);box-shadow:0 6px 18px rgba(0,0,0,.18);padding:8px 12px}
+.card{border-color:#2b394d;box-shadow:0 18px 55px rgba(0,0,0,.28)}
 .hero{gap:20px}
-.intro{position:relative;overflow:hidden;padding:38px 40px;background:linear-gradient(135deg,#fff 0%,#f3f7ff 100%)}
-.intro::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-85px;top:-100px;background:linear-gradient(145deg,rgba(45,108,223,.16),rgba(24,59,104,.03))}
+.intro{position:relative;overflow:hidden;padding:38px 40px;background:linear-gradient(135deg,#182334 0%,#142033 100%)}
+.intro::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-85px;top:-100px;background:linear-gradient(145deg,rgba(77,131,228,.22),rgba(24,59,104,.04))}
 .eyebrow{font-size:11px;letter-spacing:.16em}
-h1{max-width:760px;font-size:clamp(34px,4.6vw,56px);font-weight:780;letter-spacing:-.052em;color:#10233f}
+h1{max-width:760px;font-size:clamp(34px,4.6vw,56px);font-weight:780;letter-spacing:-.052em;color:#edf3fb}
 .hero p{max-width:710px;line-height:1.65}
-.notice{display:flex;flex-direction:column;justify-content:center;padding:28px;border-left:4px solid #d1a13c;background:linear-gradient(180deg,#fffdf8,#fff)}
-.notice strong{color:#6c4b08;font-size:16px}
+.notice{display:flex;flex-direction:column;justify-content:center;padding:28px;border-left:4px solid #d1a13c;background:linear-gradient(180deg,#182334,#151f2d)}
+.notice strong{color:#f0c875;font-size:16px;margin-bottom:6px}
 .grid{grid-template-columns:410px minmax(0,1fr);gap:20px;align-items:start}
 .grid>.card{padding:25px}
-label{color:#20334f;font-size:13px;letter-spacing:.01em}
-select,textarea,input{border-color:#d6dfeb;background:#fbfcfe;transition:border-color .18s,box-shadow .18s,background .18s}
-select:focus,textarea:focus,input:focus{outline:none;border-color:#6594e7;background:#fff;box-shadow:0 0 0 4px rgba(45,108,223,.11)}
-textarea{min-height:300px;line-height:1.6}
-.drop{padding:22px 18px;border-color:#b9c8dc;background:linear-gradient(180deg,#fafcff,#f4f7fc)}
-.drop b{display:block;margin-bottom:3px;color:#183b68;font-size:16px}
-.drop input{background:#fff;margin-top:13px}
-.primary{padding:14px 18px;background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 10px 24px rgba(45,108,223,.23);transition:transform .18s,box-shadow .18s}
-.primary:hover{transform:translateY(-1px);box-shadow:0 13px 28px rgba(45,108,223,.28)}
-.secondary{border:1px solid #cddbf3;background:#f3f7ff}
-.head{padding-bottom:15px;border-bottom:1px solid #e6ebf2}
-.head h2{font-size:21px;letter-spacing:-.025em;color:#162b48}
-.empty{min-height:430px;border:1px dashed #d6dfea;border-radius:15px;margin-top:18px;background:#fafbfd}
-.score{background:#fbfcfe;border-color:#e0e6ef;padding:16px}
-.score b{color:#183b68;margin-top:3px}
-.note{border:1px solid #d8e3f5;background:#f1f6ff;color:#29476f}
-.finding{background:#fff;padding:15px 16px;box-shadow:0 5px 15px rgba(30,50,80,.035)}
-.finding b{color:#20334f;margin-bottom:3px}
+label{color:#edf3fb;font-size:13px;letter-spacing:.01em}
+select,textarea,input{border-color:#314055;background:#111b29;color:#edf3fb;transition:border-color .18s,box-shadow .18s,background .18s;color-scheme:dark}
+select:focus,textarea:focus,input:focus{outline:none;border-color:#6594e7;background:#111b29;box-shadow:0 0 0 4px rgba(77,131,228,.15)}
+textarea{min-height:300px;line-height:1.6;white-space:pre-wrap;tab-size:4}
+.drop{padding:22px 18px;border-color:#425772;background:linear-gradient(180deg,#131f2e,#111b29)}
+.drop b{display:block;margin-bottom:3px;color:#dce9ff;font-size:16px}
+.drop input{background:#111b29;margin-top:13px}
+#file::file-selector-button{color:#edf3fb;background:#22334c;border:1px solid #425772;border-radius:9px;padding:8px 11px;margin-right:10px;font-weight:700;cursor:pointer}
+.primary{padding:14px 18px;background:linear-gradient(135deg,#183b68,#4d83e4);box-shadow:0 10px 24px rgba(0,0,0,.32);transition:transform .18s,box-shadow .18s}
+.primary:hover{transform:translateY(-1px);box-shadow:0 13px 28px rgba(0,0,0,.4)}
+.secondary{border:1px solid #425772;background:#22334c;color:#edf3fb}
+.head{padding-bottom:15px;border-bottom:1px solid #2b394d}
+.head h2{font-size:21px;letter-spacing:-.025em;color:#edf3fb}
+.empty{min-height:430px;border:1px dashed #35465d;border-radius:15px;margin-top:18px;background:#111b29}
+.score{background:#111b29;border-color:#2f3e53;padding:16px;box-shadow:0 5px 15px rgba(0,0,0,.12)}
+.score b{color:#8db4ff;margin-top:3px}
+.note{border:1px solid #294568;background:#192b45;color:#c9dcfa}
+.finding{background:#151f2d;padding:15px 16px;box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.finding h3{color:#edf3fb;margin-bottom:3px}
+.block{background:#111b29;border:1px solid #2b394d;white-space:pre-wrap;overflow-wrap:anywhere;tab-size:4}
+.block.corrected{background:#143128;border-color:#285c4c}
+.refs{box-shadow:0 18px 55px rgba(0,0,0,.28)}
+a{color:#8db4ff;text-underline-offset:3px}
 .footer{font-size:13px}
-a{color:#245fbd;text-underline-offset:3px}
-@media(max-width:820px){.wrap{padding:16px 14px 30px}.top{align-items:flex-start;gap:14px}.brand{font-size:19px}.brand::before{width:38px;height:38px}.intro{padding:28px 24px}.notice{padding:23px}.grid>.card{padding:20px}}
-@media(prefers-color-scheme:dark){:root{--bg:#0e1622;--card:#151f2d;--ink:#edf3fb;--muted:#a6b3c6;--line:#2b394d;--brand:#8db4ff;--brand2:#4d83e4;--soft:#1c2b42}.brand{color:#dce9ff}.badge{background:#152235;border-color:#30435f}.card,.notice{background:#151f2d;border-color:#2b394d}.intro{background:linear-gradient(135deg,#182334,#142033)}h1,.head h2,label,.finding b{color:#edf3fb}.notice strong{color:#f0c875}.drop,.empty,.score,select,textarea,input{background:#111b29;border-color:#314055;color:#edf3fb}.note{background:#192b45;border-color:#294568;color:#c9dcfa}.finding{background:#151f2d}}
+@media(max-width:820px){.wrap{padding:16px 14px 30px}.top{align-items:flex-start;gap:14px}.brand{font-size:19px}.brand::before{width:38px;height:38px}.intro{padding:28px 24px}.notice{padding:23px}.grid{grid-template-columns:1fr}.grid>.card{padding:20px}}
 </style>
-
-<style id="textarea-visibility-fix">
-/* Correção pontual: mantém o texto visível ao tocar/focar no conteúdo importado. */
-#text{color:#122033;-webkit-text-fill-color:#122033;caret-color:#183b68;background:#fbfcfe}
-#text:focus{color:#122033;-webkit-text-fill-color:#122033;caret-color:#183b68;background:#ffffff}
-#text::selection{background:#cfe0ff;color:#10233f;-webkit-text-fill-color:#10233f}
-@media(prefers-color-scheme:dark){
-  #text{color:#edf3fb;-webkit-text-fill-color:#edf3fb;caret-color:#8db4ff;background:#111b29}
-  #text:focus{color:#edf3fb;-webkit-text-fill-color:#edf3fb;caret-color:#8db4ff;background:#111b29;border-color:#6594e7}
-  #text::selection{background:#355b91;color:#ffffff;-webkit-text-fill-color:#ffffff}
-}
+<style id="paragraph-spacing-fix">.block br+br{display:block;content:"";margin-top:.8em}</style>
+<script src="https://cdn.jsdelivr.net/npm/html-docx-js@0.3.1/dist/html-docx.js"></script>
+<style id="persistence-export-style">
+.head-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.head-actions button{width:auto;padding:9px 12px}.clear-button{border:1px solid #704354;background:#321d27;color:#ffb7c4}.clear-button:hover{background:#452532}.export-status{margin-top:8px;color:var(--muted);font-size:12px}@media(max-width:620px){.head{align-items:flex-start;gap:12px}.head-actions{width:100%;justify-content:flex-start}}
 </style>
-
-<style id="controls-visibility-fix">
-/* Correção pontual: mantém visíveis o setor e o seletor de arquivo. */
-#sector,
-#file{
-  color:#122033;
-  -webkit-text-fill-color:#122033;
-  caret-color:#183b68;
-  background-color:#fbfcfe;
-  color-scheme:light;
-}
-#sector:focus,
-#file:focus{
-  color:#122033;
-  -webkit-text-fill-color:#122033;
-  background-color:#ffffff;
-}
-#sector option{
-  color:#122033;
-  -webkit-text-fill-color:#122033;
-  background:#ffffff;
-}
-#file::file-selector-button{
-  color:#183b68;
-  -webkit-text-fill-color:#183b68;
-  background:#edf4ff;
-  border:1px solid #cbd8ea;
-  border-radius:9px;
-  padding:8px 11px;
-  margin-right:10px;
-  font-weight:700;
-  cursor:pointer;
-}
-@media(prefers-color-scheme:dark){
-  #sector,
-  #file{
-    color:#edf3fb;
-    -webkit-text-fill-color:#edf3fb;
-    caret-color:#8db4ff;
-    background-color:#111b29;
-    color-scheme:dark;
-  }
-  #sector:focus,
-  #file:focus{
-    color:#edf3fb;
-    -webkit-text-fill-color:#edf3fb;
-    background-color:#111b29;
-    border-color:#6594e7;
-  }
-  #sector option{
-    color:#edf3fb;
-    -webkit-text-fill-color:#edf3fb;
-    background:#111b29;
-  }
-  #file::file-selector-button{
-    color:#edf3fb;
-    -webkit-text-fill-color:#edf3fb;
-    background:#22334c;
-    border-color:#425772;
-  }
-}
-</style>
-
-<style id="ambiguity-location-style">
-.finding span{display:block;white-space:pre-line;line-height:1.65}
-</style>
-</head><body><main class="wrap"><header class="top"><div class="brand">§ LexScan Brasil</div><div class="badge">MVP local • sem envio de dados</div></header><section class="hero"><div class="card intro"><div class="eyebrow">Clareza antes da assinatura</div><h1>Leia contratos com uma segunda camada de atenção.</h1><p>Faça uma triagem de redação, completude e sinais de risco. Agora com importação de TXT, PDF e DOCX diretamente no navegador.</p></div><aside class="card notice"><strong>Importante</strong><p>Esta ferramenta não oferece parecer jurídico e não confirma a validade de cláusulas. Leis e contextos mudam. Valide o resultado com profissional habilitado e consulte fontes oficiais.</p></aside></section><section class="grid"><div class="card"><div class="field"><label for="sector">Setor</label><select id="sector"><option value="civil">Civil / serviços</option><option value="consumo">Consumo</option><option value="trabalho">Trabalhista</option><option value="dados">Tecnologia e dados</option><option value="imobiliario">Imobiliário</option><option value="societario">Societário</option><option value="publico">Contratação pública</option></select></div><div class="drop"><b>Importar documento</b><div class="hint">TXT, PDF com texto selecionável ou DOCX</div><input id="file" type="file" accept=".txt,.pdf,.docx,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"><div id="status" class="status" aria-live="polite">Nenhum arquivo selecionado.</div></div><div class="field"><label for="text">Texto extraído</label><textarea id="text" placeholder="O texto importado aparecerá aqui. Você também pode colá-lo manualmente."></textarea><div class="hint"><span id="chars">0</span> caracteres</div></div><button id="analyze" class="primary">Analisar documento</button></div><div class="card"><div class="head"><h2>Relatório de triagem</h2><button id="download" class="secondary hidden">Baixar HTML</button></div><div id="empty" class="empty"><div><b style="display:block;color:var(--ink);font-size:19px;margin-bottom:4px">Nenhuma análise ainda</b>Importe um documento ou cole o texto e selecione “Analisar documento”.</div></div><div id="results" class="hidden" aria-live="polite"><div id="scores" class="scores"></div><div id="summary" class="note"></div><div id="findings"></div></div></div></section><section class="card" style="margin-top:22px;padding:17px"><h3 style="margin:0 0 10px">Referências oficiais para conferência</h3><ul style="margin:0;padding-left:20px"><li><a href="https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm" target="_blank" rel="noopener">Código Civil, texto compilado</a></li><li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener">Código de Defesa do Consumidor</a></li><li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm" target="_blank" rel="noopener">Consolidação das Leis do Trabalho</a></li><li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener">Lei Geral de Proteção de Dados Pessoais</a></li><li><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm" target="_blank" rel="noopener">Lei de Licitações e Contratos Administrativos</a></li></ul></section><div class="footer">Protótipo educacional. Não substitui revisão humana especializada.</div></main><script>
-(()=>{const $=s=>document.querySelector(s),file=$('#file'),text=$('#text'),status=$('#status');let report='';const setStatus=(m,t='')=>{status.textContent=m;status.className='status '+t};text.addEventListener('input',()=>$('#chars').textContent=text.value.length.toLocaleString('pt-BR'));if(window.pdfjsLib)pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-async function pdfText(f){if(!window.pdfjsLib)throw Error('Leitor de PDF indisponível. Verifique a conexão.');const pdf=await pdfjsLib.getDocument({data:new Uint8Array(await f.arrayBuffer())}).promise,out=[];for(let i=1;i<=pdf.numPages;i++){setStatus(`Lendo PDF: página ${i} de ${pdf.numPages}...`,'busy');const c=await(await pdf.getPage(i)).getTextContent();out.push(c.items.map(x=>x.str).join(' '))}return out.join('\n\n')}
-async function docxText(f){if(!window.mammoth)throw Error('Leitor de DOCX indisponível. Verifique a conexão.');const r=await mammoth.convertToHtml({arrayBuffer:await f.arrayBuffer()}),d=new DOMParser().parseFromString(r.value,'text/html');return d.body.innerText||d.body.textContent||''}
-file.addEventListener('change',async()=>{const f=file.files[0];if(!f)return;file.disabled=true;setStatus(`Processando ${f.name}...`,'busy');try{const n=f.name.toLowerCase();let v=n.endsWith('.txt')?await f.text():n.endsWith('.pdf')?await pdfText(f):n.endsWith('.docx')?await docxText(f):(()=>{throw Error('Formato não suportado. Use TXT, PDF ou DOCX.')})();if(!v.trim())throw Error(n.endsWith('.pdf')?'Nenhum texto encontrado. O PDF pode ser digitalizado e exigir OCR.':'Nenhum texto encontrado no arquivo.');text.value=v.trim();text.dispatchEvent(new Event('input'));setStatus(`${f.name} importado com sucesso.`)}catch(e){setStatus(e.message||'Falha ao importar.','error');file.value=''}finally{file.disabled=false}});
-const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''),has=(s,a)=>a.some(x=>s.includes(x)),esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-$('#analyze').addEventListener('click',()=>{const raw=text.value.trim();if(raw.length<120){alert('Insira ao menos 120 caracteres.');return}const s=norm(raw),sector=$('#sector').value,F=[];let C=100,R=100,J=100;const add=(level,title,detail)=>F.push({level,title,detail});if(!has(s,['contratante','contratada','partes','locador','locatario','empregador','empregado'])){add('risk','Identificação das partes','Confirme nomes, documentos, endereços e poderes de representação.');C-=24}if(!has(s,['objeto','escopo','finalidade'])){add('risk','Objeto ou escopo','Não foi localizada uma descrição clara do objeto.');C-=22}if(!has(s,['prazo','vigencia','duracao','termino'])){add('warn','Prazo e vigência','Defina início, término, renovação e efeitos posteriores.');C-=14}if(!has(s,['rescis','distrato','encerramento'])){add('warn','Encerramento','Revise hipóteses, aviso e consequências da rescisão.');J-=14}if(!has(s,['foro','arbitragem','mediacao'])){add('warn','Controvérsias','Considere definir mecanismo de solução de conflitos.');J-=8}const expressoesVagas=[
- {r:'eventualmente',s:'caso a condição expressamente indicada ocorra'},
- {r:'razoável',s:'dentro do prazo, valor ou limite objetivo especificado nesta cláusula'},
- {r:'razoavelmente',s:'conforme os critérios objetivos especificados nesta cláusula'},
- {r:'adequado',s:'em conformidade com os requisitos objetivos definidos nesta cláusula'},
- {r:'adequadamente',s:'em conformidade com os requisitos objetivos definidos nesta cláusula'},
- {r:'apropriado',s:'em conformidade com os requisitos objetivos definidos nesta cláusula'},
- {r:'satisfatório',s:'conforme os critérios objetivos de aceitação definidos nesta cláusula'},
- {r:'quando necessário',s:'quando ocorrer a condição objetiva definida nesta cláusula'},
- {r:'se necessário',s:'se ocorrer a condição objetiva definida nesta cláusula'},
- {r:'conforme necessário',s:'nas hipóteses objetivamente definidas nesta cláusula'},
- {r:'a exclusivo critério',s:'mediante decisão fundamentada nos critérios objetivos definidos nesta cláusula'},
- {r:'a critério',s:'mediante os critérios objetivos definidos nesta cláusula'},
- {r:'conforme entendimento',s:'conforme os critérios objetivos definidos nesta cláusula'},
- {r:'conforme conveniência',s:'quando atendidos os critérios objetivos definidos nesta cláusula'},
- {r:'conforme disponibilidade',s:'dentro da capacidade, prazo e prioridade definidos nesta cláusula'},
- {r:'conforme aplicável',s:'quando atendidos os requisitos expressamente definidos nesta cláusula'},
- {r:'quando aplicável',s:'quando atendidos os requisitos expressamente definidos nesta cláusula'},
- {r:'se aplicável',s:'quando atendidos os requisitos expressamente definidos nesta cláusula'},
- {r:'na medida do possível',s:'até o limite objetivo de prazo, custo ou capacidade indicado nesta cláusula'},
- {r:'sempre que possível',s:'nas hipóteses e limites objetivos definidos nesta cláusula'},
- {r:'o mais breve possível',s:'no prazo máximo definido nesta cláusula'},
- {r:'logo que possível',s:'no prazo máximo definido nesta cláusula'},
- {r:'sem demora',s:'no prazo máximo definido nesta cláusula'},
- {r:'imediatamente',s:'no prazo máximo definido nesta cláusula'},
- {r:'prontamente',s:'no prazo máximo definido nesta cláusula'},
- {r:'tempestivamente',s:'dentro do prazo definido nesta cláusula'},
- {r:'prazo hábil',s:'no prazo máximo definido nesta cláusula'},
- {r:'prazo razoável',s:'no prazo máximo definido nesta cláusula'},
- {r:'periodicamente',s:'na periodicidade definida nesta cláusula'},
- {r:'regularmente',s:'na frequência e segundo os critérios definidos nesta cláusula'},
- {r:'de tempos em tempos',s:'na periodicidade definida nesta cláusula'},
- {r:'normalmente',s:'nas condições expressamente descritas nesta cláusula'},
- {r:'substancialmente',s:'quando ultrapassado o limite objetivo definido nesta cláusula'},
- {r:'significativo',s:'superior ao limite objetivo definido nesta cláusula'},
- {r:'relevante',s:'superior ao limite objetivo definido nesta cláusula'},
- {r:'impacto material',s:'impacto superior ao limite objetivo definido nesta cláusula'},
- {r:'excessivo',s:'superior ao limite máximo definido nesta cláusula'},
- {r:'aproximadamente',s:'com a margem de tolerância definida nesta cláusula'},
- {r:'em torno de',s:'com a margem de tolerância definida nesta cláusula'},
- {r:'entre outros',s:'incluindo os itens expressamente enumerados nesta cláusula'},
- {r:'e similares',s:'e os itens expressamente identificados como equivalentes nesta cláusula'},
- {r:'e afins',s:'e os itens expressamente enumerados nesta cláusula'},
- {r:'etc',s:'e os demais itens expressamente enumerados nesta cláusula'},
- {r:'sem limitação',s:'limitado às hipóteses expressamente enumeradas nesta cláusula'},
- {r:'incluindo, mas não se limitando a',s:'incluindo os seguintes itens expressamente enumerados'},
- {r:'por qualquer motivo',s:'nas hipóteses expressamente enumeradas nesta cláusula'},
- {r:'a qualquer tempo',s:'mediante o prazo de antecedência e as condições definidos nesta cláusula'},
- {r:'a qualquer momento',s:'mediante o prazo de antecedência e as condições definidos nesta cláusula'},
- {r:'melhores esforços',s:'com a execução das medidas mínimas enumeradas nesta cláusula'},
- {r:'esforços razoáveis',s:'com a execução das medidas mínimas enumeradas nesta cláusula'},
- {r:'boa qualidade',s:'em conformidade com os padrões técnicos e critérios de aceitação definidos nesta cláusula'},
- {r:'bom estado',s:'nas condições objetivas descritas no laudo ou checklist indicado nesta cláusula'},
- {r:'perfeito estado',s:'nas condições objetivas descritas no laudo ou checklist indicado nesta cláusula'},
- {r:'comum acordo',s:'mediante manifestação expressa e escrita de todas as partes'},
- {r:'motivo justo',s:'nas hipóteses objetivamente enumeradas nesta cláusula'},
- {r:'justa causa',s:'nas hipóteses previstas na legislação aplicável e relacionadas ao contrato'},
- {r:'força maior',s:'nos eventos enquadrados na legislação aplicável e com os efeitos definidos nesta cláusula'},
- {r:'caso fortuito',s:'nos eventos enquadrados na legislação aplicável e com os efeitos definidos nesta cláusula'},
- {r:'alterações necessárias',s:'alterações descritas, justificadas e aprovadas segundo o procedimento desta cláusula'},
- {r:'custos adicionais',s:'custos especificados, comprovados e submetidos ao limite definido nesta cláusula'},
- {r:'despesas diversas',s:'despesas enumeradas e documentalmente comprovadas'},
- {r:'valor de mercado',s:'valor apurado pelo método, data-base e fonte definidos nesta cláusula'},
- {r:'preço justo',s:'preço apurado pelo método, data-base e fonte definidos nesta cláusula'},
- {r:'uso normal',s:'uso compatível com a finalidade e os critérios de conservação definidos nesta cláusula'},
- {r:'desgaste natural',s:'deterioração compatível com o tempo, uso e critérios do laudo de vistoria'},
- {r:'devidamente',s:'mediante o procedimento e os documentos exigidos nesta cláusula'},
- {r:'sujeito a aprovação',s:'sujeito à aprovação segundo os critérios, responsável e prazo definidos nesta cláusula'},
- {r:'poderá',s:'poderá, exclusivamente nas hipóteses e condições definidas nesta cláusula'},
- {r:'preferencialmente',s:'segundo a ordem de prioridade definida nesta cláusula'},
- {r:'em princípio',s:'salvo nas exceções expressamente enumeradas nesta cláusula'},
- {r:'em geral',s:'nas hipóteses expressamente enumeradas nesta cláusula'},
- {r:'basicamente',s:'conforme o escopo expressamente enumerado nesta cláusula'}
-];
-const escaparRegex=v=>v.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-const ambPattern=new RegExp(`\\b(${expressoesVagas.sort((a,b)=>b.r.length-a.r.length).map(x=>escaparRegex(x.r)).join('|')})\\b`,'gi');
-const ambMatches=[...raw.matchAll(ambPattern)];const amb=ambMatches.length;if(amb){const locais=ambMatches.map((m,i)=>{const pos=m.index||0;const linha=raw.slice(0,pos).split('\n').length;const paragrafo=raw.slice(0,pos).split(/\n\s*\n/).length;const inicio=Math.max(0,pos-55),fim=Math.min(raw.length,pos+m[0].length+55);let trecho=raw.slice(inicio,fim).replace(/\s+/g,' ').trim();if(inicio>0)trecho='…'+trecho;if(fim<raw.length)trecho+='…';const item=expressoesVagas.find(x=>x.r.toLowerCase()===m[0].toLowerCase());const substituto=item?.s||'expressão objetiva e mensurável';const fraseInicio=Math.max(0,Math.max(raw.lastIndexOf('.',pos),raw.lastIndexOf(';',pos),raw.lastIndexOf('\n',pos))+1);const candidatos=[raw.indexOf('.',pos+m[0].length),raw.indexOf(';',pos+m[0].length),raw.indexOf('\n',pos+m[0].length)].filter(x=>x>=0);const fraseFim=candidatos.length?Math.min(...candidatos)+1:Math.min(raw.length,pos+m[0].length+180);let original=raw.slice(fraseInicio,fraseFim).replace(/\s+/g,' ').trim();if(original.length>320)original=original.slice(0,317)+'…';const sugerida=original.replace(new RegExp(escaparRegex(m[0]),'i'),substituto);return `${i+1}. “${m[0]}” — parágrafo ${paragrafo}, linha ${linha}. Trecho: ${trecho} Sugestão de redação clara: “${sugerida}”`});add('warn','Termos ambíguos',`${amb} ocorrência(s) de expressões potencialmente vagas.
-
-${locais.join('\n\n')}`);R-=Math.min(30,amb*2)}if(sector==='dados'&&!has(s,['lgpd','dado pessoal','tratamento de dados'])){add('risk','Proteção de dados','Detalhe finalidade, papéis, segurança, retenção e incidentes.');J-=22}if(sector==='consumo'&&!has(s,['consumidor','cancelamento','garantia','arrependimento'])){add('warn','Relação de consumo','Revise informação, cancelamento, garantias e atendimento.');J-=15}if(sector==='trabalho'&&!has(s,['jornada','salario','remuneracao','ferias','cargo'])){add('warn','Elementos trabalhistas','Confirme função, remuneração, jornada e benefícios.');C-=18}if(sector==='publico'&&!has(s,['lei 14.133','licitacao','administracao publica','fiscal do contrato'])){add('risk','Contratação pública','Revise regime, fiscalização, sanções e cláusulas obrigatórias.');J-=24}const localizar=(regex)=>{const m=regex.exec(raw);regex.lastIndex=0;if(!m)return 'Cláusula relacionada não localizada no texto.';const pos=m.index,linha=raw.slice(0,pos).split('\n').length,paragrafo=raw.slice(0,pos).split(/\n\s*\n/).length,inicio=Math.max(0,pos-85),fim=Math.min(raw.length,pos+m[0].length+120);let trecho=raw.slice(inicio,fim).replace(/\s+/g,' ').trim();if(inicio>0)trecho='…'+trecho;if(fim<raw.length)trecho+='…';return `Cláusula relacionada: parágrafo ${paragrafo}, linha ${linha}. Trecho: ${trecho}`};
-const alertaLegal=(nivel,titulo,motivo,ref,regex)=>add(nivel,titulo,`${motivo} Referência para conferência: ${ref}. ${localizar(regex)}`);
-if(!has(s,['rescis','distrato','encerramento']))alertaLegal('warn','Alerta jurídico — rescisão','Não foi localizada disciplina clara para encerramento, aviso e efeitos da ruptura','Código Civil, arts. 421, 421-A e 422',/rescis\w*|distrato|encerramento/i);
-if(sector==='civil'){
- if(!has(s,['obrigacao','responsabilidade','indeniz','inadimplemento']))alertaLegal('warn','Civil — obrigações e responsabilidade','Revise a distribuição de obrigações, inadimplemento, perdas e danos e limites de responsabilidade','Código Civil, arts. 389, 393, 421, 421-A e 422',/obrigaç\w*|responsabil\w*|indeniz\w*|inadimplemento/gi);
- const unilateral=/a exclusivo critério|sem necessidade de justificativa|sem qualquer aviso|independentemente de notificação/i;if(unilateral.test(raw))alertaLegal('risk','Civil — poder unilateral amplo','A redação pode concentrar decisão em uma parte e merece conferência quanto à boa-fé, equilíbrio e função social do contrato','Código Civil, arts. 421, 421-A e 422',unilateral);
-}
-if(sector==='consumo'){
- if(!has(s,['informacao','informação','preco','preço','cancelamento','garantia']))alertaLegal('risk','Consumo — informação e direitos básicos','Não foram localizadas informações essenciais sobre preço, cancelamento ou garantia','CDC, arts. 6º, III, 30, 46 e 54',/preç\w*|valor|cancel\w*|garant\w*/gi);
- const abusiva=/perda total|sem direito a reembolso|renuncia(?:r)? a qualquer direito|alterar unilateralmente|isenta de toda responsabilidade/i;if(abusiva.test(raw))alertaLegal('risk','Consumo — possível cláusula abusiva','A cláusula encontrada deve ser conferida por potencial limitação excessiva de direitos do consumidor','CDC, art. 51',abusiva);
-}
-if(sector==='trabalho'){
- if(!has(s,['jornada','horario','horário','salario','salário','remuneracao','remuneração','cargo','funcao','função']))alertaLegal('risk','Trabalhista — elementos da relação','Não foram localizados elementos suficientes sobre função, remuneração e jornada','CLT, arts. 2º, 3º, 9º, 29, 58 e 442',/jornada|horário|salário|remuneraç\w*|cargo|função/gi);
- const vinculo=/exclusividade|subordinaç\w*|cumprir ordens|horário fixo|pessoalidade/i;if(vinculo.test(raw))alertaLegal('warn','Trabalhista — indícios que exigem revisão','O trecho contém elementos que podem ser relevantes para caracterização da relação de emprego, conforme o contexto real','CLT, arts. 2º, 3º e 9º',vinculo);
-}
-if(sector==='dados'){
- if(!has(s,['finalidade','base legal','consentimento','legitimo interesse','legítimo interesse','cumprimento de obrigacao','cumprimento de obrigação']))alertaLegal('risk','Dados pessoais — finalidade e base legal','Não foi localizada indicação clara de finalidade e hipótese jurídica para o tratamento','LGPD, arts. 6º e 7º',/finalidade|base legal|consentimento|legítimo interesse/gi);
- if(!has(s,['seguranca','segurança','incidente','vazamento','medidas tecnicas','medidas técnicas']))alertaLegal('warn','Dados pessoais — segurança','Não foram localizadas medidas de segurança ou tratamento de incidentes','LGPD, arts. 46 a 49',/segurança|incidente|vazamento|medidas técnicas/gi);
- const amplo=/quaisquer dados|qualquer finalidade|prazo indeterminado|compartilhar com terceiros sem/i;if(amplo.test(raw))alertaLegal('risk','Dados pessoais — autorização ampla','O trecho utiliza autorização ampla e merece conferência quanto a finalidade, necessidade e transparência','LGPD, art. 6º',amplo);
-}
-if(sector==='imobiliario'){
- if(!has(s,['aluguel','reajuste','garantia','caucao','caução','fiador','vistoria']))alertaLegal('warn','Imobiliário — elementos da locação','Não foram localizados elementos suficientes sobre aluguel, reajuste, garantia ou vistoria','Lei nº 8.245/1991, arts. 17, 18, 22, 23 e 37',/aluguel|reajuste|garantia|caução|fiador|vistoria/gi);
- const multaCheia=/multa[^.\n]{0,100}(integral|total)[^.\n]{0,80}(prazo|contrato)|multa sem proporcionalidade/i;if(multaCheia.test(raw))alertaLegal('risk','Imobiliário — multa na devolução antecipada','O trecho sobre multa deve ser conferido quanto à proporcionalidade ao período cumprido','Lei nº 8.245/1991, art. 4º',multaCheia);
-}
-if(sector==='societario'){
- if(!has(s,['objeto social','capital social','administrador','administracao','administração','participacao','participação','quotas','acoes','ações']))alertaLegal('risk','Societário — estrutura essencial','Não foram localizados elementos suficientes sobre objeto, capital, participação ou administração','Código Civil, arts. 997 e 1.011; para sociedades por ações, Lei nº 6.404/1976, arts. 1º e 2º',/objeto social|capital social|administraç\w*|participaç\w*|quotas|ações/gi);
- const conflito=/conflito de interesses|benefício particular|vantagem particular/i;if(conflito.test(raw))alertaLegal('warn','Societário — conflito de interesses','O trecho merece revisão dos deveres de administração e das regras aplicáveis ao tipo societário','Código Civil, art. 1.011; para sociedades por ações, Lei nº 6.404/1976, arts. 115 e 156',conflito);
-}
-if(sector==='publico'){
- if(!has(s,['objeto','vinculacao','vinculação','legislacao aplicavel','legislação aplicável','execucao','execução','pagamento','fiscalizacao','fiscalização','sancao','sanção']))alertaLegal('risk','Contratação pública — cláusulas necessárias','Não foram localizados vários elementos tipicamente exigidos em contratos administrativos','Lei nº 14.133/2021, art. 92',/objeto|vinculaç\w*|execuç\w*|pagamento|fiscalizaç\w*|sanç\w*/gi);
- if(!has(s,['fiscal do contrato','gestor do contrato','fiscalizacao','fiscalização']))alertaLegal('warn','Contratação pública — gestão e fiscalização','Não foi localizada indicação sobre acompanhamento ou fiscalização contratual','Lei nº 14.133/2021, art. 117',/fiscal do contrato|gestor do contrato|fiscalizaç\w*/gi);
-}
-if(!F.length)add('ok','Triagem básica concluída','Nenhuma omissão simples foi detectada, mas a revisão especializada continua necessária.');[C,R,J]=[C,R,J].map(x=>Math.max(20,x));const A=Math.round((C+R+J)/3);$('#scores').innerHTML=[['Completude',C],['Redação',R],['Atenção jurídica',J]].map(x=>`<div class="score"><small>${x[0]}</small><b>${x[1]}/100</b></div>`).join('');$('#summary').innerHTML=`<b>Índice preliminar: ${A}/100</b><br>Resultado heurístico, não uma conclusão jurídica.`;$('#findings').innerHTML=F.map(x=>`<div class="finding ${x.level}"><b>${esc(x.title)}</b><span>${esc(x.detail)}</span></div>`).join('');$('#empty').classList.add('hidden');$('#results').classList.remove('hidden');$('#download').classList.remove('hidden');report=`<!doctype html><meta charset="utf-8"><title>Relatório LexScan</title><style>body{font:15px Arial;max-width:850px;margin:40px auto;padding:20px}article{border:1px solid #ddd;padding:12px;margin:10px 0}article p{white-space:pre-line;line-height:1.65}</style><h1>Relatório LexScan</h1><p>Índice preliminar: ${A}/100</p>${F.map(x=>`<article><b>${esc(x.title)}</b><p>${esc(x.detail)}</p></article>`).join('')}<small>Triagem educacional. Não substitui parecer jurídico.</small>`});$('#download').addEventListener('click',()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([report],{type:'text/html'}));a.download='relatorio-lexscan.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)})})();</script>
-<script id="lexscan-integrated-enhancements">
-/* Integração interna: jurisprudência, nível de risco e filtro automático por setor. */
+</head>
+<body><main class="wrap">
+<header class="top"><div class="brand">§ LexScan Imóveis</div><div class="badge">Análise local • sem envio de dados</div></header>
+<section class="hero"><div class="card intro"><div class="eyebrow">Contratos imobiliários</div><h1>Revisão focada em locação e compra e venda.</h1><p>Triagem de completude, redação e sinais de atenção jurídica, com sugestões apresentadas para o parágrafo inteiro.</p></div><aside class="card notice"><strong>Importante</strong><p>Ferramenta educacional e heurística. Não emite parecer, não confirma validade ou nulidade e não substitui advogado ou conferência registral.</p></aside></section>
+<section class="grid"><div class="card">
+<div class="field"><label for="type">Tipo de contrato</label><select id="type"><option value="locacao">Locação de imóvel</option><option value="compra">Compra e venda de imóvel</option></select></div>
+<div class="drop"><b>Importar documento</b><div class="hint">TXT, PDF com texto selecionável ou DOCX</div><input id="file" type="file" accept=".txt,.pdf,.docx,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"><div id="status" class="status" aria-live="polite">Nenhum arquivo selecionado.</div></div>
+<div class="field"><label for="text">Texto do contrato</label><textarea id="text" placeholder="Cole o contrato ou importe um arquivo."></textarea><div class="hint"><span id="chars">0</span> caracteres</div></div><button id="analyze" class="primary">Revisar contrato</button></div>
+<div class="card"><div class="head"><h2>Relatório de triagem</h2><div class="head-actions"><button id="downloadWord" class="secondary hidden" type="button">Baixar Word</button><button id="clearContract" class="clear-button" type="button">Limpar</button></div></div><div id="empty" class="empty"><div><b>Nenhuma análise ainda</b><br>Importe ou cole o contrato e selecione “Revisar contrato”.</div></div><div id="results" class="hidden"><div id="scores" class="scores"></div><div id="summary" class="note"></div><div id="findings"></div></div></div></section>
+<section class="card refs"><h3>Referências oficiais para conferência</h3><ul><li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8245compilado.htm" target="_blank" rel="noopener">Lei do Inquilinato, Lei nº 8.245/1991</a></li><li><a href="https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm" target="_blank" rel="noopener">Código Civil</a></li><li><a href="https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm" target="_blank" rel="noopener">Lei de Registros Públicos</a></li><li><a href="https://www.planalto.gov.br/ccivil_03/leis/l4591.htm" target="_blank" rel="noopener">Lei de Condomínios e Incorporações</a></li><li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13786.htm" target="_blank" rel="noopener">Lei nº 13.786/2018, distrato imobiliário</a></li></ul></section>
+<div class="footer">Protótipo educacional. A revisão humana especializada continua necessária.</div></main>
+<script>
+(()=>{const $=s=>document.querySelector(s),file=$('#file'),text=$('#text'),status=$('#status');let report='';const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const formatText=v=>{const cleaned=String(v).replace(/<br\s*\/?\s*>/gi,'\n').replace(/\r\n?/g,'\n').split('\n').map(line=>line.replace(/[ \t]+/g,' ').trim()).join('\n');const lines=cleaned.split('\n'),out=[];for(const line of lines){const novoParagrafo=/^\s*(?:(?:\d{1,2})(?:\.\d+)*(?=\s|[-–—.:])|CLÁUSULA\b|PARÁGRAFO\b)/i.test(line);if(novoParagrafo&&out.length&&out[out.length-1]!=='')out.push('');out.push(line)}return esc(out.join('\n').replace(/\n{3,}/g,'\n\n')).replace(/\n/g,'<br>')};const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');const setStatus=(m,c='')=>{status.textContent=m;status.className='status '+c};text.addEventListener('input',()=>$('#chars').textContent=text.value.length.toLocaleString('pt-BR'));if(window.pdfjsLib)pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+async function pdfText(f){if(!window.pdfjsLib)throw Error('Leitor de PDF indisponível.');const pdf=await pdfjsLib.getDocument({data:new Uint8Array(await f.arrayBuffer())}).promise,out=[];for(let i=1;i<=pdf.numPages;i++){setStatus(`Lendo PDF: página ${i} de ${pdf.numPages}...`,'busy');const c=await(await pdf.getPage(i)).getTextContent();out.push(c.items.map(x=>x.str+(x.hasEOL?'\n':' ')).join('').replace(/[ \t]+\n/g,'\n'))}return out.join('\n\n')}
+async function docxText(f){if(!window.mammoth)throw Error('Leitor de DOCX indisponível.');const r=await mammoth.convertToHtml({arrayBuffer:await f.arrayBuffer()}),d=new DOMParser().parseFromString(r.value,'text/html');return d.body.innerText||''}
+file.addEventListener('change',async()=>{const f=file.files[0];if(!f)return;try{setStatus(`Processando ${f.name}...`,'busy');const n=f.name.toLowerCase();let v=n.endsWith('.txt')?await f.text():n.endsWith('.pdf')?await pdfText(f):n.endsWith('.docx')?await docxText(f):'';if(!v.trim())throw Error('Nenhum texto encontrado ou formato não suportado.');text.value=v.replace(/<br\s*\/?\s*>/gi,'\n').trim();text.dispatchEvent(new Event('input'));setStatus(`${f.name} importado com sucesso.`)}catch(e){setStatus(e.message,'error')}});
+function paragraphs(raw){const normalized=raw.replace(/\r\n?/g,'\n');const matches=[...normalized.matchAll(/(^|\n{2,})([\s\S]*?)(?=\n{2,}|$)/g)];return matches.map(m=>({text:m[2],start:m.index+m[1].length})).filter(x=>x.text.trim())}
+const vague=[['razoável','dentro do prazo objetivo de [●] dias'],['razoavelmente','de acordo com os critérios objetivos descritos nesta cláusula'],['quando necessário','quando ocorrer [descrever condição objetiva]'],['se necessário','se ocorrer [descrever condição objetiva]'],['a exclusivo critério','mediante decisão fundamentada nos critérios objetivos desta cláusula'],['a qualquer tempo','mediante aviso escrito com antecedência mínima de [●] dias'],['a qualquer momento','mediante aviso escrito com antecedência mínima de [●] dias'],['imediatamente','no prazo máximo de [●] horas ou dias'],['o mais breve possível','no prazo máximo de [●] dias'],['bom estado','no estado descrito no laudo de vistoria anexo'],['perfeito estado','no estado descrito no laudo de vistoria anexo'],['valor de mercado','valor apurado por [método/fonte], na data-base de [●]'],['desgaste natural','deterioração compatível com o tempo e o uso regular, conforme o laudo de vistoria'],['sem limitação','limitado às hipóteses expressamente enumeradas nesta cláusula'],['entre outros','incluindo exclusivamente os itens a seguir: [enumerar]']];
+const rules={locacao:[
+['Partes e imóvel',['locador','locatario','locatário','matricula','matrícula','endereco','endereço'],'Identifique locador, locatário, documentos, endereço e matrícula do imóvel.','Lei nº 8.245/1991 e Código Civil'],
+['Aluguel e reajuste',['aluguel','reajuste','indice','índice','vencimento'],'Defina valor, vencimento, forma de pagamento, índice e periodicidade do reajuste.','Lei nº 8.245/1991, arts. 17 e 18'],
+['Prazo e entrega',['prazo','vigencia','vigência','chaves','entrega'],'Indique início, término, entrega das chaves e regras de prorrogação.','Lei nº 8.245/1991'],
+['Garantia locatícia',['caucao','caução','fiador','fiança','seguro fiança','garantia'],'Especifique uma modalidade de garantia, seus limites, duração e devolução.','Lei nº 8.245/1991, arts. 37 a 40'],
+['Vistoria, conservação e reparos',['vistoria','conservacao','conservação','reparo','benfeitoria'],'Vincule o estado do imóvel a laudo de vistoria e distribua reparos e benfeitorias.','Lei nº 8.245/1991, arts. 22, 23 e 35'],
+['Rescisão e multa proporcional',['rescis','multa','devolucao','devolução'],'Defina aviso, entrega, quitação e proporcionalidade da multa na saída antecipada.','Lei nº 8.245/1991, art. 4º']
+],compra:[
+['Partes e imóvel',['vendedor','comprador','matricula','matrícula','cartorio','cartório'],'Identifique as partes e descreva o imóvel conforme a matrícula.','Código Civil e Lei nº 6.015/1973'],
+['Preço e pagamento',['preco','preço','pagamento','sinal','parcela'],'Defina preço, sinal, parcelas, vencimentos, condição de financiamento e consequência do inadimplemento.','Código Civil, compra e venda'],
+['Título, ônus e certidões',['onus','ônus','certidao','certidão','matricula','matrícula','tributo'],'Preveja matrícula atualizada, ônus, ações, débitos tributários e condominiais.','Lei nº 6.015/1973 e Código Civil'],
+['Escritura e registro',['escritura','registro','transferencia','transferência'],'Defina condições, prazo, despesas e cooperação para escritura e registro.','Código Civil, arts. 108, 1.227 e 1.245'],
+['Posse e entrega',['posse','chaves','entrega','desocupado'],'Indique quando a posse e as chaves serão entregues e em qual estado de ocupação.','Código Civil'],
+['Inadimplemento e distrato',['inadimplemento','rescis','distrato','multa','devolucao','devolução'],'Defina mora, notificação, prazo de cura, resolução e restituições.','Código Civil; Lei nº 13.786/2018 quando aplicável']
+]};
+function fullSuggestion(p,term,repl){const r=new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i');return p.replace(r,repl)}
+$('#analyze').addEventListener('click',()=>{const raw=text.value.trim();if(raw.length<120){alert('Insira ao menos 120 caracteres.');return}const type=$('#type').value,s=norm(raw),ps=paragraphs(raw),F=[];let C=100,R=100,J=100;for(const [title,keys,advice,ref] of rules[type]){if(!keys.some(k=>s.includes(norm(k)))){F.push({level:'risk',title:'Ausência ou baixa evidência: '+title,meta:ref,detail:advice});C-=12;J-=8}}
+ps.forEach((item,idx)=>{const p=item.text,np=norm(p);vague.forEach(([term,repl])=>{if(np.includes(norm(term))){F.push({level:'warn',title:`Redação potencialmente vaga: “${term}”`,meta:`Parágrafo ${idx+1}`,original:p,corrected:fullSuggestion(p,term,repl),detail:'Complete os campos entre colchetes com dados objetivos do negócio. As quebras de linha internas e a estrutura original do parágrafo foram preservadas.'});R-=3}})});
+const duplicate=new Set(),unique=F.filter(x=>{const k=x.title+'|'+(x.meta||'');if(duplicate.has(k))return false;duplicate.add(k);return true});if(!unique.length)unique.push({level:'ok',title:'Triagem básica concluída',detail:'Não foram detectadas omissões simples ou expressões vagas cadastradas. Isso não equivale a aprovação jurídica.'});[C,R,J]=[C,R,J].map(v=>Math.max(20,v));const A=Math.round((C+R+J)/3);$('#scores').innerHTML=[['Completude',C],['Redação',R],['Atenção jurídica',J]].map(x=>`<div class="score"><small>${x[0]}</small><b>${x[1]}/100</b></div>`).join('');$('#summary').innerHTML=`<b>Índice preliminar: ${A}/100</b><br>${type==='locacao'?'Locação de imóvel':'Compra e venda de imóvel'} • resultado heurístico.`;$('#findings').innerHTML=unique.map(x=>`<article class="finding ${x.level}"><h3>${esc(x.title)}</h3>${x.meta?`<div class="meta">${esc(x.meta)}</div>`:''}<div>${esc(x.detail||'')}</div>${x.original?`<div class="block"><b>Parágrafo original completo</b>${formatText(x.original)}</div><div class="block corrected"><b>Parágrafo completo sugerido</b>${formatText(x.corrected)}</div>`:''}</article>`).join('');$('#empty').classList.add('hidden');$('#results').classList.remove('hidden');$('#downloadWord').classList.remove('hidden');report=`<!doctype html><meta charset="utf-8"><title>Relatório LexScan Imóveis</title><style>body{font:15px Arial;max-width:900px;margin:40px auto;padding:20px}article{border:1px solid #ddd;padding:14px;margin:12px 0}.block{white-space:pre-wrap;overflow-wrap:anywhere;tab-size:4;background:#f5f5f5;padding:10px;margin-top:8px}.corrected{background:#eef8f4}.block br+br{display:block;content:"";margin-top:.8em}</style><h1>Relatório LexScan Imóveis</h1><p>Índice preliminar: ${A}/100</p>`+unique.map(x=>`<article><h2>${esc(x.title)}</h2><p>${esc(x.detail||'')}</p>${x.original?`<div class="block"><b>Original completo</b><br>${formatText(x.original)}</div><div class="block corrected"><b>Sugerido completo</b><br>${formatText(x.corrected)}</div>`:''}</article>`).join('')+`<small>Triagem educacional. Não substitui parecer jurídico.</small>`});
+})();
+</script>
+<script id="persistence-pdf-word">
 (()=>{
-  const sector=document.querySelector('#sector');
-  const analyze=document.querySelector('#analyze');
-  const results=document.querySelector('#results');
-  const findings=document.querySelector('#findings');
-  const text=document.querySelector('#text');
-  if(!sector||!analyze||!results||!findings||!text)return;
-
-  const jurisprudencia={
-    civil:'STJ: base de Súmulas e Súmulas Anotadas. Conferir entendimentos sobre boa-fé objetiva, função social e equilíbrio contratual conforme o caso concreto.',
-    consumo:'STJ: Súmulas e Súmulas Anotadas em Direito do Consumidor. Conferir o controle de cláusulas abusivas segundo o contrato e as circunstâncias do caso.',
-    trabalho:'TST: matéria temática “Vínculo de Emprego” e verbetes aplicáveis. Conferir subordinação, pessoalidade, onerosidade e não eventualidade na realidade da prestação.',
-    dados:'STJ: panorama de precedentes da LGPD e REsp 2.147.374-SP, Terceira Turma, julgado em 03/12/2024, sobre incidente de segurança e responsabilidade civil proativa.',
-    imobiliario:'STJ: REsp 331.365-MG, julgado em 09/04/2002, sobre devolução antecipada em locação comercial e multa do art. 4º da Lei do Inquilinato.',
-    societario:'STJ: REsp 1.727.979-MG, sobre cláusula compromissória em contrato social e arbitrabilidade de interesses societários disponíveis.',
-    publico:'STJ: base de jurisprudência e Manual de Gestão e Fiscalização de Contratos atualizado conforme a Lei nº 14.133/2021.'
-  };
-
-  const nivel=card=>card.classList.contains('risk')?'ALTO':card.classList.contains('ok')?'BAIXO':'MÉDIO';
-  const nomeSetor=()=>sector.selectedOptions[0]?.textContent||sector.value;
-
-  function enriquecerAlertas(){
-    findings.querySelectorAll('.finding').forEach(card=>{
-      if(card.dataset.lexscanIntegrated==='1')return;
-      const detail=card.querySelector('span');
-      if(!detail)return;
-      card.dataset.lexscanIntegrated='1';
-      card.dataset.sector=sector.value;
-      const original=detail.textContent.trim();
-      detail.textContent=`Nível de risco da cláusula: ${nivel(card)}. Setor: ${nomeSetor()}. ${original}\n\nJurisprudência para conferência: ${jurisprudencia[sector.value]||jurisprudencia.civil}`;
-    });
-  }
-
-  const observer=new MutationObserver(enriquecerAlertas);
-  observer.observe(findings,{childList:true,subtree:true});
-
-  sector.addEventListener('change',()=>{
-    if(!results.classList.contains('hidden')&&text.value.trim().length>=120){
-      analyze.click();
-    }
-  });
-
-  enriquecerAlertas();
+ const text=document.querySelector('#text'),type=document.querySelector('#type'),file=document.querySelector('#file'),status=document.querySelector('#status'),analyze=document.querySelector('#analyze'),empty=document.querySelector('#empty'),results=document.querySelector('#results'),wordBtn=document.querySelector('#downloadWord'),clearBtn=document.querySelector('#clearContract');
+ const safeHtml=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const normalizeWordText=v=>String(v).replace(/<br\s*\/?\s*>/gi,'\n').replace(/<\/p\s*>/gi,'\n\n').replace(/<\/div\s*>/gi,'\n').replace(/<[^>]+>/g,'').replace(/&nbsp;/gi,' ').replace(/\r\n?/g,'\n');
+ const KEY_TEXT='lexscan.imoveis.ultimoContrato',KEY_TYPE='lexscan.imoveis.tipoContrato';
+ const save=()=>{try{localStorage.setItem(KEY_TEXT,text.value);localStorage.setItem(KEY_TYPE,type.value)}catch(e){}};
+ let timer;const scheduleSave=()=>{clearTimeout(timer);timer=setTimeout(save,250)};
+ text.addEventListener('input',scheduleSave);type.addEventListener('change',save);analyze.addEventListener('click',save);
+ const restored=(()=>{try{const saved=localStorage.getItem(KEY_TEXT)||'',savedType=localStorage.getItem(KEY_TYPE);if(savedType&&[...type.options].some(o=>o.value===savedType))type.value=savedType;if(saved){text.value=saved;text.dispatchEvent(new Event('input'));status.textContent='Último contrato restaurado neste navegador.';return saved.length>=120}}catch(e){}return false})();
+ if(restored)setTimeout(()=>analyze.click(),0);
+ clearBtn.addEventListener('click',()=>{try{localStorage.removeItem(KEY_TEXT);localStorage.removeItem(KEY_TYPE)}catch(e){}text.value='';text.dispatchEvent(new Event('input'));type.selectedIndex=0;file.value='';status.textContent='Contrato anterior removido. Insira um novo documento.';results.classList.add('hidden');empty.classList.remove('hidden');wordBtn.classList.add('hidden');text.focus()});
+ const fileName=ext=>`relatorio-lexscan-imoveis.${ext}`;
+ const downloadBlob=(blob,name)=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1200)};
+ const reportTitle=()=>document.querySelector('#summary')?.innerText.trim()||'Relatório de triagem';
+ wordBtn.addEventListener('click',()=>{try{if(!window.htmlDocx?.asBlob)throw Error('Gerador de Word indisponível. Verifique a conexão.');const root=document.querySelector('#results'),summary=root.querySelector('#summary')?.innerText.trim()||'',scores=[...root.querySelectorAll('.score')].map(x=>({label:x.querySelector('small')?.innerText.trim()||'',value:x.querySelector('b')?.innerText.trim()||''})),findings=[...root.querySelectorAll('.finding')].map(card=>({title:card.querySelector('h3')?.innerText.trim()||'',meta:card.querySelector('.meta')?.innerText.trim()||'',detail:[...card.children].find(el=>el.tagName==='DIV'&&!el.classList.contains('meta')&&!el.classList.contains('block'))?.innerText.trim()||'',blocks:[...card.querySelectorAll('.block')].map(b=>({label:b.querySelector('b')?.innerText.trim()||'',text:b.innerText.replace(b.querySelector('b')?.innerText||'','').trim(),corrected:b.classList.contains('corrected')}))}));const paragraphs=t=>normalizeWordText(t).split(/\n{2,}/).filter(x=>x.trim()).map(p=>`<p>${safeHtml(p).replace(/\n/g,'<br>')}</p>`).join('');const scoresHtml=`<table class="scores"><tr>${scores.map(x=>`<td><span>${safeHtml(x.label)}</span><strong>${safeHtml(x.value)}</strong></td>`).join('')}</tr></table>`;const findingsHtml=findings.map((f,i)=>`<section class="finding"><h2>${i+1}. ${safeHtml(f.title)}</h2>${f.meta?`<p class="meta">${safeHtml(f.meta)}</p>`:''}${f.detail?`<p>${safeHtml(f.detail)}</p>`:''}${f.blocks.map(b=>`<div class="text-block ${b.corrected?'corrected':''}"><h3>${safeHtml(b.label)}</h3>${paragraphs(b.text)}</div>`).join('')}</section>`).join('');const html=`<!doctype html><html><head><meta charset="utf-8"><style>@page{size:A4;margin:1.8cm 1.7cm}body{font-family:Arial,sans-serif;font-size:10.5pt;line-height:1.5;color:#172033}h1{font-size:20pt;color:#183b68;margin:0 0 6pt}h2{font-size:13pt;color:#183b68;margin:0 0 6pt}h3{font-size:10.5pt;color:#20334f;margin:0 0 6pt}p{margin:0 0 9pt;text-align:justify}.subtitle{color:#5e6d82;margin-bottom:16pt}.summary{background:#edf4ff;border:1pt solid #c9d9ef;padding:9pt;margin-bottom:12pt}.scores{width:100%;border-collapse:collapse;margin:0 0 14pt}.scores td{width:33.33%;border:1pt solid #cbd5e1;padding:8pt;background:#f7f9fc}.scores span{display:block;color:#66758d;font-size:9pt}.scores strong{display:block;color:#183b68;font-size:15pt;margin-top:3pt}.finding{border:1pt solid #d7dee8;padding:11pt;margin:0 0 12pt;page-break-inside:avoid}.meta{color:#66758d;font-size:9pt}.text-block{background:#f5f7fa;border:1pt solid #d9e0e8;padding:10pt;margin:9pt 0}.text-block.corrected{background:#eef8f4;border-color:#b9ddcf}.text-block p{margin:0 0 9pt;text-align:justify}.text-block p:last-child{margin-bottom:0}.footer{color:#66758d;font-size:8.5pt;border-top:1pt solid #d7dee8;padding-top:8pt;margin-top:16pt}</style></head><body><h1>Relatório LexScan Imóveis</h1><p class="subtitle">Relatório de triagem contratual</p><div class="summary">${safeHtml(summary).replace(/\n/g,'<br>')}</div>${scoresHtml}${findingsHtml}<p class="footer">Triagem educacional. Não substitui parecer jurídico ou revisão humana especializada.</p></body></html>`;const blob=window.htmlDocx.asBlob(html,{orientation:'portrait',margins:{top:1020,right:960,bottom:1020,left:960}});if(!(blob instanceof Blob)||!blob.size)throw Error('O arquivo Word não foi gerado corretamente.');downloadBlob(blob,fileName('docx'))}catch(e){alert(e.message||'Não foi possível gerar o Word.')}});
 })();
 </script>
 </body></html>
